@@ -1,0 +1,11 @@
+version: '3'
+services:
+    balanced_brackets_service:
+        build:
+            dockerfile: ./docker_images/server.dockerfile
+            context: .
+        image: balanced_brackets_image
+        container_name: balanced_brackets_service
+        ports:
+            - "8080:8080"
+        command: bash -c "java -jar target/balancedbrackets-0.0.1-SNAPSHOT.jar"
